@@ -29,10 +29,11 @@ Things you may want to cover:
 |------|----|-------|
 |e-mail|string|null: false, unique: true|
 |password|string|null: false|
-|nickname|string|null: false|
+|nickname|string|null: false, index: true|
 
 ### Association
 - has_many :messages
+- has_many :members
 - has_many :groups, through: :members
 
 ## groupsテーブル
@@ -43,6 +44,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
+- has_many :members
 - has_many :users, through: :members
 
 ## membersテーブル

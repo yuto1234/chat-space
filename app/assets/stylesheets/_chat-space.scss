@@ -1,0 +1,127 @@
+.groups{
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  width: 300px;
+}
+
+.group{
+  padding: 20px;
+  &__name{
+    color: $white;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+  &__first-text{
+    color: $white;
+    font-size: 11px;
+    font-weight: bold;
+  }
+}
+
+.fa{
+  color: $white;
+}
+
+.chat-space{
+  width: calc(100vw - 300px);
+  &__header{
+    height: 100px;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+      &--group-title{
+        padding: 35px 0px 15px 40px;
+        font-size: 20px;
+        color: #333;
+      }
+      &--group-member{
+        font-size: 12px;
+        color: $light-gray;
+        padding-left: 40px;
+        display: flex;
+      }
+    }
+    &__right{
+      &--group-edit{
+        text-decoration: none;
+        line-height: 40px;
+        padding: 0px 20px;
+        margin: 28px 40px;
+        border: solid 1px $sky-bule;
+        color: $sky-bule;
+        text-decoration: none;
+      }
+    }
+  }
+  &__main{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 46px 40px 0px;  
+  }
+  &__bottom{
+    height: 90px;
+    background-color: #ddd;
+  }
+}
+
+.decolation{
+  text-decoration: none;
+}
+
+.message{
+  &__info{
+    display: flex;
+    &--user-name{
+      color: $dark-gray;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &--post-time{
+      color: $light-gray;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+  }
+  &__post{
+    color: $dark-gray;
+    font-size: 14px;
+    margin: 10px 0px 40px 0px;
+  }
+}
+
+.input-form{
+  padding: 20px 40px;
+  display: flex;
+  &__box{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    color: $dark-gray;
+    padding: 17px 10px;
+    border-style: none;
+    position: relative;
+    &__image{
+      position: absolute;
+      right: 165px;
+      bottom: 13px;
+      color: black;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  }
+  &__submit{
+    width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: $sky-bule;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+#message_image.input-box__image__file{
+  display: none;
+}

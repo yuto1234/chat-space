@@ -1,13 +1,14 @@
 .side-menu
   .side-menu__header
     .side-menu__header__box
-      .side-menu__header__box--name ニックネーム
+      .side-menu__header__box--name
+        = current_user.name
       .side-menu__header__box__icon
         .side-menu__header__box__icon--new-group
           =link_to "/groups/new" do
             =fa_icon 'edit'
         .side-menu__header__box__icon--new-group
-          =link_to "/users/1163/edit" do
+          =link_to edit_user_path(current_user) do
             =fa_icon 'cog'
   .groups
     .group

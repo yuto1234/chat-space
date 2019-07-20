@@ -1,0 +1,25 @@
+.chat-space
+  .chat-space__header
+    .chat-space__header__left
+      .chat-space__header__left--group-title グループ名
+      .chat-space__header__left--group-member メンバー：
+    .chat-space__header__right.decolation
+      =link_to "groups/2556/edit", class:"decolation" do
+        .chat-space__header__right--group-edit Edit
+  .chat-space__main
+    .message
+      .message__info
+        .message__info--user-name ニックネーム
+        .message__info--post-time 2019-07-19(Fri) 15:15:15
+      .message__post 投稿内容
+      .message__info
+        .message__info--user-name ニックネーム２
+        .message__info--post-time 2019-07-20(Sat) 15:15:15
+      .message__post 投稿内容２
+  .chat-space__bottom
+    .input-form
+      %input.input-form__box{name: "message[content]", placeholder: "type a message", type: "text"}
+      %label{for: "message_image"}
+        %i.fa.fa-image.input-form__box__image
+        %input#message_image.input-box__image__file{name: "message[image]", type: "file"}
+      %input.input-form__submit{type: "submit", value: "send"}

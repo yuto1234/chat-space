@@ -5,7 +5,7 @@
         = current_user.name
       .side-menu__header__box__icon
         .side-menu__header__box__icon--new-group
-          =link_to "/groups/new" do
+          =link_to new_group_path do
             =fa_icon 'edit'
         .side-menu__header__box__icon--new-group
           =link_to edit_user_path(current_user) do

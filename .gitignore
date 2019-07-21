@@ -16,3 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 public/uploads/*
+
+# 画像をGitで管理しない
+image_uploader.rb

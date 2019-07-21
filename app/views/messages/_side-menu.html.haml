@@ -12,10 +12,8 @@
             =fa_icon 'cog'
   .groups
     .group
-      =link_to "/groups/2556/messages", class:"decolation" do
-        .group__name グループ名1
-        .group__first-text 最初の投稿1
-    .group
-      =link_to "/groups/2557/messages", class:"decolation" do
-        .group__name グループ名2
-        .group__first-text 最初の投稿2
+      - current_user.groups.each do |group|
+        =link_to group_messages_path(group), class:"decolation" do
+          .group__name 
+            = group.name
+          .group__first-text 最初の投稿1

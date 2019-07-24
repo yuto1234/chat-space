@@ -1,6 +1,9 @@
 $(function(){
 
   function buildHTML(message){
+    var content = (message.content == "") ? ``:`<p class="message__post">${ message.content }</p>`;
+    var image = (message.image == null) ? ``:`<img src='${ message.image }', class='lower-message__image'>`;
+
     var html = `<div class="message">
                   <div class="message__info">
                     <div class="message__info--user-name">
@@ -10,15 +13,10 @@ $(function(){
                       ${ message.created_at }
                     </div>
                   </div>
-                <div class="message__post">`
-                if (message.content != ""){
-                  html += `<p class="message__post">${ message.content }</p>`
-                }
-                if (message.image != null){
-                  html += `<img src='${ message.image }', class='lower-message__image'>`
-                }
-
-                html += '</div>'
+                <div class="message__post">
+                  ${ content }
+                  ${ image }
+                </div>`
     return html;
   }
 
@@ -37,7 +35,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-space__main').append(html);
-      $('.input-form__box').val('');
+      $('#new_message').get(0).reset();
       $('.chat-space__main').animate({ scrollTop: $('.chat-space__main')[0].scrollHeight});
     })
     .fail(function(){

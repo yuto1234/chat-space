@@ -2,14 +2,14 @@ $(function(){
 
   function buildHTML(message){
     var html = `<div class="message">
-                <div class="message__info">
-                <div class="message__info--user-name">
-                ${ message.name }
-                </div>
-                <div class="message__info--post-time">
-                ${ message.created_at }
-                </div>
-                </div>
+                  <div class="message__info">
+                    <div class="message__info--user-name">
+                      ${ message.name }
+                    </div>
+                    <div class="message__info--post-time">
+                      ${ message.created_at }
+                    </div>
+                  </div>
                 <div class="message__post">`
                 if (message.content != ""){
                   html += `<p class="message__post">${ message.content }</p>`
@@ -36,9 +36,15 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-space__main').append(html)
-      $('.input-form__box').val('')
+      $('.chat-space__main').append(html);
+      $('.input-form__box').val('');
       $('.chat-space__main').animate({ scrollTop: $('.chat-space__main')[0].scrollHeight});
     })
-  })
-})
+    .fail(function(){
+      alert('投稿に失敗しました');
+    })
+    .always(function(){
+      $('.input-form__submit').removeAttr('disabled');
+    });
+  });
+});

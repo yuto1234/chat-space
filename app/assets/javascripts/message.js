@@ -38,6 +38,7 @@ $(function(){
       var html = buildHTML(data);
       $('.chat-space__main').append(html)
       $('.input-form__box').val('')
+      $('.chat-space__main').animate({ scrollTop: $('.chat-space__main')[0].scrollHeight});
     })
   })
 })

@@ -1,8 +1,12 @@
 .chat-space
   .chat-space__header
     .chat-space__header__left
-      .chat-space__header__left--group-title グループ名
-      .chat-space__header__left--group-member メンバー：
+      .chat-space__header__left--group-title 
+        = @group.name
+      .chat-space__header__left--group-member
+        メンバー：
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .chat-space__header__right.decolation
       =link_to "groups/1/edit", class:"decolation" do
         .chat-space__header__right--group-edit Edit

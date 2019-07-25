@@ -28,7 +28,7 @@ $(function(){
       dataType: 'json'
     })
     .done(function(user){
-      $("#user-search-result").empty();
+      search_result.empty();
         if (user.length !== 0){
           user.forEach(function(user){
             appendUser(user);
@@ -41,5 +41,8 @@ $(function(){
     .fail(function(){
       alert('ユーザー検索に失敗しました');
     })
+  });
+  search_result.on('click', function(){
+    console.log("ok")
   });
 });
